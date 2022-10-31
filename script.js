@@ -2,8 +2,8 @@ let display = document.getElementById('result');
 let input = 0;
 
 function type(el) {
-    if(input == 0) {
-        input =  el.innerText;
+    if (input == 0) {
+        input = el.innerText;
     } else {
         input += el.innerText;
     }
@@ -18,8 +18,17 @@ document.getElementById("clear").addEventListener('click', function () {
 
 document.getElementById("equal").addEventListener('click', function () {
     let result = 0;
-    result = eval(display.innerText).toFixed(15);
-    display.innerText = result;
+    result = eval(display.innerText);
+    
+    if (isNaN(result) || result == 'Infinity') {
+        display.innerText = 'Math Error';
+    } else {
+        result = (result % 1 === 0) ? result : result.toFixed(15);
+        display.innerText = result;
+    }
+
+
+    input = result;
 });
 
 document.getElementById("delete").addEventListener('click', function () {
