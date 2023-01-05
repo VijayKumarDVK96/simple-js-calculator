@@ -1,4 +1,4 @@
-# Simple Calculator with Javascript
+# Simple Calculator with JavaScript
 
 **DEMO :** https://tiny-melomakarona-d6b689.netlify.app/
 
